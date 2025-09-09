@@ -31,21 +31,54 @@
 <template>
   <header>
     <h1>
-        <img src="../assets/logo.png" alt="logo do alura tracker">
+        <img class="img" src="../assets/logo.png" alt="logo do alura tracker">
     </h1>
+  <div class="has-text-centered">
     <button class="button" @click="alterarTema">
       {{ textoBotao }}
     </button>
-  </header>
+  </div>
+  <nav class="panel mt-5">
+    <ul>
+      <li>
+        <router-link to="/" class="link">
+          <i class="fas fa-tasks"></i>
+          tarefas
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/projetos" class="link">
+          <i class="fas fa-project-diagram"></i>
+          projetos
+        </router-link>
+      </li>
+    </ul>
+  </nav>
+ </header>
 </template>
 
 <style scoped>
 header {
   padding: 1rem;
-  background: #0d3b66;
+  background: #2c043b;
   width: 100%;
   height: 100vh;
   text-align: center;
+}
+.img {
+  margin-bottom: 2rem;
+}
+.panel li {
+    margin: 8px 0;
+}
+.link {
+    color: #fff;
+}
+.link:hover {
+    color: #FAF0CA;
+}
+.link.router-link-active {
+    color: #FAF0CA;
 }
 @media only screen and (max-width: 768px) {
   header {
